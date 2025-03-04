@@ -1,2 +1,85 @@
-<p>111</p>
-<h>222</h>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技企业官网</title>
+    <!-- 集成Material Design组件库 <button class="citation-flag" data-index="8"> -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <style>
+        /* 全局科技感配色方案 <button class="citation-flag" data-index="4"> */
+        :root {
+            --primary-color: #1A2B4C; /* 深蓝 */
+            --secondary-color: #5C6BC0; /* 渐变紫起点 */
+            --accent-color: #C5CAE9; /* 银灰 */
+        }
+        
+        /* 视差滚动效果 <button class="citation-flag" data-index="9"> */
+        .parallax {
+            background-image: url('placeholder.jpg');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* 3D模型容器样式 <button class="citation-flag" data-index="3"> */
+        .model-viewer {
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            perspective: 1000px;
+        }
+        
+        /* 响应式导航布局方案 <button class="citation-flag" data-index="7"> */
+        .nav-scheme {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 方案一：顶部导航布局 -->
+    <header class="nav-scheme" id="scheme1">
+        <div contenteditable="true">品牌LOGO</div>
+        <nav>
+            <a href="#home">主页</a>
+            <a href="#products">产品</a>
+            <a href="#contact">联系</a>
+        </nav>
+    </header>
+
+    <!-- 主页动态Banner <button class="citation-flag" data-index="4"> -->
+    <section id="home" class="parallax"></section>
+
+    <!-- 产品展示页3D模型占位 <button class="citation-flag" data-index="3"> -->
+    <section id="products">
+        <div class="model-viewer">
+            <!-- 此处后续可替换为Three.js生成的3D模型 -->
+            <img src="3d-placeholder.png" alt="AI生成3D模型占位图">
+        </div>
+    </section>
+
+    <!-- 联系方式页地图嵌入 -->
+    <section id="contact">
+        <iframe src="https://maps.google.com/maps?q=科技公司&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+    </section>
+
+    <script>
+        // 视差滚动初始化 <button class="citation-flag" data-index="9">
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.parallax').forEach(el => {
+                el.style.transform = `translateY(${window.scrollY * 0.3}px)`
+            })
+        })
+
+        // Material Design组件初始化 <button class="citation-flag" data-index="8">
+        mdc.autoInit()
+    </script>
+</body>
+</html>
