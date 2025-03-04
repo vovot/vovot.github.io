@@ -3,124 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>我的GitHub个人网站</title>
     <style>
-        /* 基础样式 <button class="citation-flag" data-index="9"><button class="citation-flag" data-index="10"> */
+        /* 简单的内置CSS样式 */
         body {
-            font-family: '微软雅黑', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #f0f8ff;
         }
-        
-        /* 页头样式 <button class="citation-flag" data-index="1"><button class="citation-flag" data-index="4"> */
         header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        /* 导航栏设计 <button class="citation-flag" data-index="1"><button class="citation-flag" data-index="4"> */
-        nav {
-            background: #444;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        nav a {
+            background-color: #333;
             color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: inline-block;
+            padding: 1rem;
         }
-        
-        nav a:hover {
-            background: #575757;
-            border-radius: 4px;
-        }
-        
-        /* 内容区域布局 <button class="citation-flag" data-index="8"> */
-        .container {
-            width: 80%;
-            margin: 20px auto;
+        nav {
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
             gap: 20px;
         }
-        
-        .content {
-            flex: 3;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .sidebar {
-            flex: 1;
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        
-        /* 页脚样式 <button class="citation-flag" data-index="1"><button class="citation-flag" data-index="4"> */
-        footer {
-            background: #333;
+        nav a {
             color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #ddd;
+        }
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        #about img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .project {
+            margin-bottom: 1.5rem;
+        }
+        footer {
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        
-        /* 图片悬停效果 <button class="citation-flag" data-index="3"><button class="citation-flag" data-index="7"> */
-        .gallery img {
-            width: 100%;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery img:hover {
-            transform: scale(1.05);
+            padding: 1rem;
+            background-color: #f4f4f4;
         }
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
     <header>
-        <h1>欢迎来到我的主页</h1>
+        <nav>
+            <div class="logo">我的名字</div>
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.html">首页</a>
-        <a href="about.html">关于我</a>
-        <a href="contact.html">联系</a>
-    </nav>
+    <!-- 个人简介 -->
+    <section id="about">
+        <h1>关于我</h1>
+        <img src="path/to/your/photo.jpg" alt="我的照片">
+        <p>我是一名前端开发者，热爱编程和设计。我拥有丰富的HTML、CSS和JavaScript经验，并致力于创建用户友好的web应用。</p>
+    </section>
 
-    <div class="container">
-        <div class="content">
-            <h2>这是首页内容</h2>
-            <p>这里可以放置你的主要介绍内容...</p>
-            
-            <div class="gallery">
-                <img src="images/photo1.jpg" alt="示例图片1">
-                <img src="images/photo2.jpg" alt="示例图片2">
-            </div>
+    <!-- 技能展示 -->
+    <section id="skills">
+        <h2>技能</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Git</li>
+        </ul>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects">
+        <h2>项目</h2>
+        <div class="project">
+            <h3>项目一</h3>
+            <p>这是一个使用React和Node.js构建的web应用。</p>
+            <a href="链接到项目">查看项目</a>
         </div>
-
-        <div class="sidebar">
-            <h3>最新动态</h3>
-            <ul>
-                <li>2025年3月4日 更新了页面</li>
-                <li>项目进行中...</li>
-            </ul>
+        <div class="project">
+            <h3>项目二</h3>
+            <p>这是一个使用Vue.js和Firebase构建的实时聊天应用。</p>
+            <a href="链接到项目">查看项目</a>
         </div>
-    </div>
+    </section>
 
+    <!-- 联系方式 -->
+    <section id="contact">
+        <h2>联系方式</h2>
+        <p>电子邮件: example@example.com</p>
+        <p>LinkedIn: <a href="链接到LinkedIn">我的LinkedIn</a></p>
+        <p>GitHub: <a href="链接到GitHub">我的GitHub</a></p>
+    </section>
+
+    <!-- 页脚 -->
     <footer>
-        <p>&copy; 2025 你的名字 版权所有</p>
+        <p>&copy; 2023 我的名字. 保留所有权利。</p>
     </footer>
 </body>
 </html>
