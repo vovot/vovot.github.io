@@ -3,83 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科技企业官网</title>
-    <!-- 集成Material Design组件库 <button class="citation-flag" data-index="8"> -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <title>我的个人主页</title>
+    <link rel="stylesheet" href="styles/style.css">
     <style>
-        /* 全局科技感配色方案 <button class="citation-flag" data-index="4"> */
-        :root {
-            --primary-color: #1A2B4C; /* 深蓝 */
-            --secondary-color: #5C6BC0; /* 渐变紫起点 */
-            --accent-color: #C5CAE9; /* 银灰 */
+        /* 基础样式 <button class="citation-flag" data-index="9"><button class="citation-flag" data-index="10"> */
+        body {
+            font-family: '微软雅黑', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f8ff;
         }
         
-        /* 视差滚动效果 <button class="citation-flag" data-index="9"> */
-        .parallax {
-            background-image: url('placeholder.jpg');
-            height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        /* 页头样式 <button class="citation-flag" data-index="1"><button class="citation-flag" data-index="4"> */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
         }
         
-        /* 3D模型容器样式 <button class="citation-flag" data-index="3"> */
-        .model-viewer {
-            width: 300px;
-            height: 300px;
-            margin: 2rem auto;
-            perspective: 1000px;
+        /* 导航栏设计 <button class="citation-flag" data-index="1"><button class="citation-flag" data-index="4"> */
+        nav {
+            background: #444;
+            padding: 10px;
+            text-align: center;
         }
         
-        /* 响应式导航布局方案 <button class="citation-flag" data-index="7"> */
-        .nav-scheme {
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            background: #575757;
+            border-radius: 4px;
+        }
+        
+        /* 内容区域布局 <button class="citation-flag" data-index="8"> */
+        .container {
+            width: 80%;
+            margin: 20px auto;
             display: flex;
-            justify-content: space-between;
-            padding: 1rem;
-            background: var(--primary-color);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .content {
+            flex: 3;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        /* 页脚样式 <button class="citation-flag" data-index="1"><button class="citation-flag" data-index="4"> */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        
+        /* 图片悬停效果 <button class="citation-flag" data-index="3"><button class="citation-flag" data-index="7"> */
+        .gallery img {
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <!-- 方案一：顶部导航布局 -->
-    <header class="nav-scheme" id="scheme1">
-        <div contenteditable="true">品牌LOGO</div>
-        <nav>
-            <a href="#home">主页</a>
-            <a href="#products">产品</a>
-            <a href="#contact">联系</a>
-        </nav>
+    <header>
+        <h1>欢迎来到我的主页</h1>
     </header>
 
-    <!-- 主页动态Banner <button class="citation-flag" data-index="4"> -->
-    <section id="home" class="parallax"></section>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="contact.html">联系</a>
+    </nav>
 
-    <!-- 产品展示页3D模型占位 <button class="citation-flag" data-index="3"> -->
-    <section id="products">
-        <div class="model-viewer">
-            <!-- 此处后续可替换为Three.js生成的3D模型 -->
-            <img src="3d-placeholder.png" alt="AI生成3D模型占位图">
+    <div class="container">
+        <div class="content">
+            <h2>这是首页内容</h2>
+            <p>这里可以放置你的主要介绍内容...</p>
+            
+            <div class="gallery">
+                <img src="images/photo1.jpg" alt="示例图片1">
+                <img src="images/photo2.jpg" alt="示例图片2">
+            </div>
         </div>
-    </section>
 
-    <!-- 联系方式页地图嵌入 -->
-    <section id="contact">
-        <iframe src="https://maps.google.com/maps?q=科技公司&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
-    </section>
+        <div class="sidebar">
+            <h3>最新动态</h3>
+            <ul>
+                <li>2025年3月4日 更新了页面</li>
+                <li>项目进行中...</li>
+            </ul>
+        </div>
+    </div>
 
-    <script>
-        // 视差滚动初始化 <button class="citation-flag" data-index="9">
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.parallax').forEach(el => {
-                el.style.transform = `translateY(${window.scrollY * 0.3}px)`
-            })
-        })
-
-        // Material Design组件初始化 <button class="citation-flag" data-index="8">
-        mdc.autoInit()
-    </script>
+    <footer>
+        <p>&copy; 2025 你的名字 版权所有</p>
+    </footer>
 </body>
 </html>
